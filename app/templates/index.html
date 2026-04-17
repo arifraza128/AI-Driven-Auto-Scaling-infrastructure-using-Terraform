@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auto Scaling App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🚀 Intelligent Auto Scaling Website</h1>
+    <p>This app is running inside a Docker container!</p>
+
+    <div class="card">
+        <h2>How It Works</h2>
+        <p>CloudWatch provides the historical metrics, and your AI model predicts future load, which helps decide when to scale the application before the traffic spike actually happens.</p>
+    </div>
+
+    <div class="card">
+        <h2>AI Scaling Forecast</h2>
+        <p>Recommended action: <strong>{{ prediction.action_label }}</strong></p>
+        <p>Confidence: {{ prediction.confidence }}</p>
+        <p>Latest CloudWatch CPU: {{ prediction.latest_cpu }}%</p>
+        <p>Latest network in: {{ prediction.latest_network_in }}</p>
+        <p>Latest network out: {{ prediction.latest_network_out }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Instance Info</h2>
+        <p>Hostname: {{ hostname }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Status</h2>
+        <p>System is running smoothly ✅</p>
+    </div>
+</div>
+
+</body>
+</html>
